@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thrixzell Xhen O. Jara | Portfolio</title>
+
+```
+<style>
+    /* =========================
+       MODERN PURPLE THEME
+    ========================== */
+    :root {
+        --purple-dark: #160b2e;
+        --purple-deep: #21103f;
+        --purple: #6c3df5;
+        --purple-light: #9b7bff;
+        --purple-soft: #c9b8ff;
+        --pink: #e879f9;
+        --white: #ffffff;
+        --text: #f5f3ff;
+        --muted: #b8afd0;
+        --card: rgba(255, 255, 255, 0.07);
+        --card-border: rgba(255, 255, 255, 0.12);
+        --shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        --gradient: linear-gradient(135deg, #6c3df5, #a855f7, #e879f9);
+    }
+
+    /* =========================
+       RESET
+    ========================== */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+
+    html {
+        scroll-padding-top: 90px;
+    }
+
+    body {
+        font-family: "Segoe UI", Inter, Roboto, Arial, sans-serif;
+        background:
+            radial-gradient(circle at 10% 10%, rgba(108, 61, 245, 0.18), transparent 30%),
+            radial-gradient(circle at 90% 20%, rgba(232, 121, 249, 0.12), transparent 25%),
+            var(--purple-dark);
+        color: var(--text);
+        line-height: 1.7;
+        overflow-x: hidden;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        width: 400px;
+        height: 400px;
+        background: rgba(108, 61, 245, 0.12);
+        filter: blur(100px);
+        border-radius: 50%;
+        top: 20%;
+        left: -200px;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    body::after {
+        content: "";
+        position: fixed;
+        width: 350px;
+        height: 350px;
+        background: rgba(232, 121, 249, 0.08);
+        filter: blur(100px);
+        border-radius: 50%;
+        bottom: 10%;
+        right: -150px;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .container {
+        width: min(1100px, 90%);
+        margin: auto;
+    }
+
+    section {
+        padding: 100px 0;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+    nav {
+        position: fixed;
+        top: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(1050px, 92%);
+        padding: 13px 20px;
+        background: rgba(30, 15, 58, 0.75);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border: 1px solid var(--card-border);
+        border-radius: 50px;
+        z-index: 1000;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+    }
+
+    .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: var(--white);
+    }
+
+    .logo span {
+        color: var(--purple-light);
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .nav-links a {
+        color: var(--muted);
+        font-size: 0.9rem;
+        font-weight: 600;
+        padding: 9px 14px;
+        border-radius: 30px;
+        transition: 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: white;
+        background: rgba(155, 123, 255, 0.16);
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+    #hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-top: 120px;
+    }
+
+    .hero-content {
+        display: grid;
+        grid-template-columns: 0.85fr 1.4fr;
+        gap: 70px;
+        align-items: center;
+    }
+
+    .profile-wrapper {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    .profile-ring {
+        width: 330px;
+        height: 330px;
+        padding: 8px;
+        border-radius: 50%;
+        background: var(--gradient);
+        box-shadow:
+            0 0 0 10px rgba(155, 123, 255, 0.05),
+            0 25px 60px rgba(108, 61, 245, 0.3);
+        animation: float 5s ease-in-out infinite;
+    }
+
+    .profile-img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        border: 6px solid var(--purple-dark);
+    }
+
+    .profile-decoration {
+        position: absolute;
+        width: 55px;
+        height: 55px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+
+    .decoration-one {
+        top: 10px;
+        right: 5px;
+        animation: float 4s ease-in-out infinite;
+    }
+
+    .decoration-two {
+        bottom: 15px;
+        left: 5px;
+        animation: float 4.5s ease-in-out infinite reverse;
+    }
+
+    .hero-greeting {
+        color: var(--purple-soft);
+        font-weight: 700;
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .hero-name {
+        font-size: clamp(2.8rem, 6vw, 5rem);
+        line-height: 1.05;
+        letter-spacing: -2px;
+        margin-bottom: 18px;
+    }
+
+    .hero-name span {
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+        color: var(--muted);
+        margin-bottom: 25px;
+    }
+
+    .hero-description {
+        color: var(--muted);
+        max-width: 650px;
+        margin-bottom: 30px;
+    }
+
+    .hero-details {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .detail-pill {
+        background: rgba(155, 123, 255, 0.1);
+        border: 1px solid rgba(155, 123, 255, 0.18);
+        padding: 9px 15px;
+        border-radius: 30px;
+        color: var(--purple-soft);
+        font-size: 0.9rem;
+    }
+
+    .hero-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--gradient);
+        color: white;
+        padding: 13px 23px;
+        border-radius: 30px;
+        font-weight: 700;
+        box-shadow: 0 10px 30px rgba(108, 61, 245, 0.3);
+        transition: 0.3s ease;
+    }
+
+    .hero-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(108, 61, 245, 0.4);
+    }
+
+    /* =========================
+       SECTION TITLES
+    ========================== */
+    .section-heading {
+        margin-bottom: 45px;
+    }
+
+    .small-title {
+        color: var(--purple-light);
+        font-size: 0.9rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 7px;
+    }
+
+    .section-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.2;
+    }
+
+    .section-description {
+        color: var(--muted);
+        max-width: 650px;
+        margin-top: 12px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+    #about {
+        background: rgba(255, 255, 255, 0.025);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .glass-card {
+        background: var(--card);
+        border: 1px solid var(--card-border);
+        border-radius: 24px;
+        padding: 32px;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(12px);
+        transition: 0.35s ease;
+    }
+
+    .glass-card:hover {
+        transform: translateY(-7px);
+        border-color: rgba(155, 123, 255, 0.3);
+    }
+
+    .card-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 16px;
+        background: rgba(108, 61, 245, 0.18);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+
+    .glass-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+
+    .about-text {
+        color: var(--muted);
+    }
+
+    /* =========================
+       SKILLS
+    ========================== */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .skill-card {
+        background: var(--card);
+        border: 1px solid var(--card-border);
+        padding: 25px;
+        border-radius: 22px;
+        transition: 0.35s ease;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-6px);
+        background: rgba(155, 123, 255, 0.08);
+    }
+
+    .skill-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .skill-name {
+        font-weight: 700;
+        font-size: 1.05rem;
+    }
+
+    .skill-percent {
+        color: var(--purple-light);
+        font-size: 0.85rem;
+        font-weight: 700;
+    }
+
+    .skill-description {
+        color: var(--muted);
+        font-size: 0.92rem;
+        margin-bottom: 15px;
+    }
+
+    .skill-bar {
+        height: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .skill-fill {
+        height: 100%;
+        width: 0;
+        background: var(--gradient);
+        border-radius: 20px;
+        transition: width 1.3s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    /* =========================
+       PROJECTS
+    ========================== */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+    }
+
+    .project-card {
+        background: var(--card);
+        border: 1px solid var(--card-border);
+        border-radius: 24px;
+        padding: 28px;
+        min-height: 290px;
+        display: flex;
+        flex-direction: column;
+        transition: 0.35s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .project-card::before {
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        background: rgba(108, 61, 245, 0.15);
+        border-radius: 50%;
+        filter: blur(30px);
+        right: -50px;
+        top: -50px;
+    }
+
+    .project-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(155, 123, 255, 0.35);
+    }
+
+    .project-number {
+        color: var(--purple-light);
+        font-weight: 800;
+        font-size: 0.8rem;
+        margin-bottom: 25px;
+    }
+
+    .project-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+    }
+
+    .project-card p {
+        color: var(--muted);
+        font-size: 0.92rem;
+        flex: 1;
+    }
+
+    .tags {
+        margin-top: 25px;
+    }
+
+    .tag {
+        display: inline-block;
+        padding: 6px 11px;
+        margin: 3px;
+        border-radius: 20px;
+        background: rgba(155, 123, 255, 0.1);
+        border: 1px solid rgba(155, 123, 255, 0.15);
+        color: var(--purple-soft);
+        font-size: 0.78rem;
+    }
+
+    /* =========================
+       ACHIEVEMENTS
+    ========================== */
+    #achievements {
+        background: rgba(255, 255, 255, 0.025);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .achievements-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+    }
+
+    .achievement-card {
+        background: linear-gradient(
+            145deg,
+            rgba(108, 61, 245, 0.14),
+            rgba(255, 255, 255, 0.04)
+        );
+        border: 1px solid var(--card-border);
+        border-radius: 24px;
+        padding: 30px;
+        transition: 0.35s ease;
+    }
+
+    .achievement-card:hover {
+        transform: translateY(-7px);
+        border-color: rgba(232, 121, 249, 0.3);
+    }
+
+    .achievement-icon {
+        font-size: 2rem;
+        margin-bottom: 18px;
+    }
+
+    .achievement-card h3 {
+        margin-bottom: 10px;
+    }
+
+    .achievement-card p {
+        color: var(--muted);
+    }
+
+    /* =========================
+       GOALS
+    ========================== */
+    .goals-container {
+        max-width: 850px;
+    }
+
+    .goals-list {
+        display: grid;
+        gap: 15px;
+    }
+
+    .goal-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+        background: var(--card);
+        border: 1px solid var(--card-border);
+        border-radius: 20px;
+        padding: 20px 23px;
+        transition: 0.3s ease;
+    }
+
+    .goal-item:hover {
+        transform: translateX(6px);
+        border-color: rgba(155, 123, 255, 0.3);
+    }
+
+    .goal-icon {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        border-radius: 13px;
+        background: rgba(108, 61, 245, 0.16);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .goal-item strong {
+        color: var(--purple-soft);
+    }
+
+    .goal-item p {
+        color: var(--muted);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+    footer {
+        padding: 55px 0;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .footer-name {
+        font-size: 1.4rem;
+        font-weight: 800;
+        margin-bottom: 8px;
+    }
+
+    .footer-name span {
+        color: var(--purple-light);
+    }
+
+    .footer-text {
+        color: var(--muted);
+        font-size: 0.9rem;
+    }
+
+    .footer-heart {
+        color: var(--pink);
+    }
+
+    /* =========================
+       FLOATING ANIMATION
+    ========================== */
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-12px);
+        }
+    }
+
+    /* =========================
+       FADE ANIMATION
+    ========================== */
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+    @media (max-width: 900px) {
+
+        nav {
+            width: 95%;
+        }
+
+        .logo {
+            display: none;
+        }
+
+        .nav-inner {
+            justify-content: center;
+        }
+
+        .nav-links {
+            gap: 2px;
+        }
+
+        .nav-links a {
+            padding: 8px 9px;
+            font-size: 0.78rem;
+        }
+
+        .hero-content {
+            grid-template-columns: 1fr;
+            text-align: center;
+            gap: 45px;
+        }
+
+        .profile-wrapper {
+            order: -1;
+        }
+
+        .hero-details {
+            justify-content: center;
+        }
+
+        .hero-description {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-button {
+            margin: auto;
+        }
+
+        .projects-grid,
+        .achievements-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: 650px) {
+
+        section {
+            padding: 75px 0;
+        }
+
+        nav {
+            top: 10px;
+            border-radius: 25px;
+            padding: 8px;
+        }
+
+        .nav-links {
+            overflow-x: auto;
+            width: 100%;
+            justify-content: flex-start;
+            scrollbar-width: none;
+        }
+
+        .nav-links::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-links a {
+            white-space: nowrap;
+        }
+
+        .profile-ring {
+            width: 245px;
+            height: 245px;
+        }
+
+        .hero-name {
+            font-size: 2.7rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+        }
+
+        .about-grid,
+        .skills-grid,
+        .projects-grid,
+        .achievements-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .glass-card,
+        .project-card,
+        .achievement-card {
+            padding: 24px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- =========================
+     NAVIGATION
+========================== -->
+<nav>
+    <div class="nav-inner">
+
+        <a href="#hero" class="logo">
+            TX<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#hero" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#achievements" class="nav-link">Achievements</a></li>
+            <li><a href="#goals" class="nav-link">Goals</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- =========================
+     HERO
+========================== -->
+<section id="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="profile-wrapper">
+
+                <div class="profile-ring">
+                    <img
+                        src="xhen.png"
+                        alt="Thrixzell Xhen O. Jara"
+                        class="profile-img"
+                        onerror="this.src='https://placehold.co/500x500/6c3df5/ffffff?text=TX'"
+                    >
+                </div>
+
+                <div class="profile-decoration decoration-one">
+                    💻
+                </div>
+
+                <div class="profile-decoration decoration-two">
+                    ✨
+                </div>
+
+            </div>
+
+
+            <div class="hero-text reveal">
+
+                <p class="hero-greeting">
+                    👋 Hello! I'm
+                </p>
+
+                <h1 class="hero-name">
+                    Thrixzell Xhen O.
+                    <span>Jara</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    Grade 9 Student &nbsp;•&nbsp; Young Learner &nbsp;•&nbsp; Future Builder
+                </p>
+
+                <p class="hero-description">
+                    Welcome to my little corner of the internet! I'm a curious
+                    student who enjoys technology, creativity, learning new
+                    things, and turning ideas into something useful.
+                </p>
+
+                <div class="hero-details">
+
+                    <div class="detail-pill">
+                        📍 Smart Gonzaga, Cagayan
+                    </div>
+
+                    <div class="detail-pill">
+                        🎓 Gonzaga National High School
+                    </div>
+
+                    <div class="detail-pill">
+                        💜 Student
+                    </div>
+
+                </div>
+
+                <a href="https://canva.link/xzfacollkttp9da" class="hero-button">
+                    Resume
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================== -->
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <p class="small-title">
+                About Me
+            </p>
+
+            <h2 class="section-title">
+                A little bit about who I am.
+            </h2>
+
+            <p class="section-description">
+                I'm a student who believes that every new experience is
+                an opportunity to learn, grow, and improve.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="glass-card reveal">
+
+                <div class="card-icon">
+                    🌱
+                </div>
+
+                <h3>
+                    Who I Am
+                </h3>
+
+                <p class="about-text">
+                    I am <strong>Thrixzell Xhen O. Jara</strong>, a dedicated
+                    and enthusiastic Grade 9 student at Gonzaga National
+                    High School. I live in Smart Gonzaga, Cagayan, and I
+                    enjoy learning new things and challenging myself.
+                </p>
+
+                <br>
+
+                <p class="about-text">
+                    I consider myself friendly, responsible, hardworking,
+                    and willing to learn. I value honesty, respect,
+                    cooperation, and making positive connections with
+                    the people around me.
+                </p>
+
+            </div>
+
+
+            <div class="glass-card reveal">
+
+                <div class="card-icon">
+                    🚀
+                </div>
+
+                <h3>
+                    My Interests
+                </h3>
+
+                <p class="about-text">
+                    I'm interested in technology, computers, reading,
+                    creativity, and discovering how things work.
+                    I especially enjoy exploring digital skills and
+                    learning how websites are created.
+                </p>
+
+                <br>
+
+                <p class="about-text">
+                    I've also developed skills in teamwork, communication,
+                    public speaking, and time management through school
+                    projects and activities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================== -->
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <p class="small-title">
+                Skills
+            </p>
+
+            <h2 class="section-title">
+                Things I'm learning.
+            </h2>
+
+            <p class="section-description">
+                These represent the areas where I've developed experience
+                through school, projects, and personal learning.
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+            <div class="skill-card reveal">
+
+                <div class="skill-header">
+                    <span class="skill-name">📚 Academics</span>
+                    <span class="skill-percent">85%</span>
+                </div>
+
+                <p class="skill-description">
+                    Mathematics, Science, English, Filipino, and
+                    Araling Panlipunan.
+                </p>
+
+                <div class="skill-bar">
+                    <div class="skill-fill" data-width="85"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-header">
+                    <span class="skill-name">💻 Technology</span>
+                    <span class="skill-percent">75%</span>
+                </div>
+
+                <p class="skill-description">
+                    Basic HTML, CSS, internet research, and
+                    Microsoft Office.
+                </p>
+
+                <div class="skill-bar">
+                    <div class="skill-fill" data-width="75"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-header">
+                    <span class="skill-name">🤝 Social Skills</span>
+                    <span class="skill-percent">90%</span>
+                </div>
+
+                <p class="skill-description">
+                    Teamwork, leadership, communication, and
+                    responsibility.
+                </p>
+
+                <div class="skill-bar">
+                    <div class="skill-fill" data-width="90"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-header">
+                    <span class="skill-name">🎨 Creativity</span>
+                    <span class="skill-percent">80%</span>
+                </div>
+
+                <p class="skill-description">
+                    Writing, creative thinking, problem solving,
+                    and generating new ideas.
+                </p>
+
+                <div class="skill-bar">
+                    <div class="skill-fill" data-width="80"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================== -->
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <p class="small-title">
+                Projects
+            </p>
+
+            <h2 class="section-title">
+                Things I've worked on.
+            </h2>
+
+            <p class="section-description">
+                A collection of school activities, creative work,
+                and projects that helped me develop new skills.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+            <div class="project-card reveal">
+
+                <div class="project-number">
+                    PROJECT 01
+                </div>
+
+                <h3>
+                    Personal Portfolio Website
+                </h3>
+
+                <p>
+                    Designed and built my own portfolio website using
+                    HTML, CSS, and JavaScript to introduce myself and
+                    showcase my journey as a student.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+
+            </div>
+
+
+            <div class="project-card reveal">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <h3>
+                    School Academic Projects
+                </h3>
+
+                <p>
+                    Completed research papers, written reports,
+                    presentations, and performance tasks across
+                    different subjects.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Research</span>
+                    <span class="tag">Writing</span>
+                    <span class="tag">Presentation</span>
+                </div>
+
+            </div>
+
+
+            <div class="project-card reveal">
+
+                <div class="project-number">
+                    PROJECT 03
+                </div>
+
+                <h3>
+                    Community & Class Activities
+                </h3>
+
+                <p>
+                    Participated in school programs, group projects,
+                    classroom activities, and collaborative tasks
+                    with classmates.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Teamwork</span>
+                    <span class="tag">Leadership</span>
+                    <span class="tag">Communication</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ACHIEVEMENTS
+========================== -->
+<section id="achievements">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <p class="small-title">
+                Achievements
+            </p>
+
+            <h2 class="section-title">
+                Small wins matter. ✨
+            </h2>
+
+            <p class="section-description">
+                Every achievement is part of my journey and motivates
+                me to continue learning.
+            </p>
+
+        </div>
+
+
+        <div class="achievements-grid">
+
+            <div class="achievement-card reveal">
+
+                <div class="achievement-icon">
+                    🏆
+                </div>
+
+                <h3>
+                    Consistent Student
+                </h3>
+
+                <p>
+                    Maintained good academic standing and actively
+                    participated in classroom activities throughout
+                    my school years.
+                </p>
+
+            </div>
+
+
+            <div class="achievement-card reveal">
+
+                <div class="achievement-icon">
+                    📖
+                </div>
+
+                <h3>
+                    Knowledge & Growth
+                </h3>
+
+                <p>
+                    Continuously developed new skills and explored
+                    technology, including building my own website.
+                </p>
+
+            </div>
+
+
+            <div class="achievement-card reveal">
+
+                <div class="achievement-icon">
+                    🤝
+                </div>
+
+                <h3>
+                    Good Character
+                </h3>
+
+                <p>
+                    Strive to be helpful, honest, respectful,
+                    responsible, and reliable when working with
+                    teachers and classmates.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GOALS
+========================== -->
+<section id="goals">
+
+    <div class="container">
+
+        <div class="goals-container">
+
+            <div class="section-heading reveal">
+
+                <p class="small-title">
+                    My Goals
+                </p>
+
+                <h2 class="section-title">
+                    Where I'm heading next. 🚀
+                </h2>
+
+                <p class="section-description">
+                    I want to keep improving myself while discovering
+                    the things I'm passionate about.
+                </p>
+
+            </div>
+
+
+            <div class="goals-list">
+
+                <div class="goal-item reveal">
+
+                    <div class="goal-icon">
+                        🎓
+                    </div>
+
+                    <div>
+                        <strong>Short-term</strong>
+                        <p>
+                            Finish Grade 9 with high honors and
+                            continue improving in all subjects.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="goal-item reveal">
+
+                    <div class="goal-icon">
+                        💻
+                    </div>
+
+                    <div>
+                        <strong>Skill</strong>
+                        <p>
+                            Learn more about programming, web
+                            development, and computer technology.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="goal-item reveal">
+
+                    <div class="goal-icon">
+                        🏫
+                    </div>
+
+                    <div>
+                        <strong>Education</strong>
+                        <p>
+                            Complete high school at Gonzaga National
+                            High School while continuing to grow
+                            academically and personally.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="goal-item reveal">
+
+                    <div class="goal-icon">
+                        🌏
+                    </div>
+
+                    <div>
+                        <strong>Future</strong>
+                        <p>
+                            Pursue higher education in a field I'm
+                            passionate about, possibly technology
+                            or engineering.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="goal-item reveal">
+
+                    <div class="goal-icon">
+                        ❤️
+                    </div>
+
+                    <div>
+                        <strong>Personal</strong>
+                        <p>
+                            Become a successful person who can help
+                            my family and contribute positively
+                            to my community.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+<footer>
+
+    <div class="container">
+
+        <p class="footer-name">
+            Thrixzell Xhen O. <span>Jara</span>
+        </p>
+
+        <p class="footer-text">
+            Grade 9 Student • Gonzaga National High School
+        </p>
+
+        <p class="footer-text" style="margin-top: 7px;">
+            Smart Gonzaga, Cagayan
+        </p>
+
+        <p class="footer-text" style="margin-top: 18px;">
+            Built with <span class="footer-heart">♥</span>,
+            curiosity, and determination.
+        </p>
+
+        <p class="footer-text" style="margin-top: 20px;">
+            © 2026 Thrixzell Xhen O. Jara
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+<script>
+
+    /* =========================
+       ACTIVE NAVIGATION
+    ========================== */
+
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll("section");
+
+    window.addEventListener("scroll", () => {
+
+        let currentSection = "";
+
+        sections.forEach(section => {
+
+            const sectionTop = section.offsetTop - 180;
+            const sectionHeight = section.offsetHeight;
+
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY < sectionTop + sectionHeight
+            ) {
+                currentSection = section.getAttribute("id");
+            }
+
+        });
+
+        navLinks.forEach(link => {
+
+            link.classList.remove("active");
+
+            if (
+                link.getAttribute("href") === "#" + currentSection
+            ) {
+                link.classList.add("active");
+            }
+
+        });
+
+    });
+
+
+    /* =========================
+       SKILL BAR ANIMATION
+    ========================== */
+
+    const skillBars = document.querySelectorAll(".skill-fill");
+
+    const skillObserver = new IntersectionObserver(
+        (entries, observer) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    const width =
+                        entry.target.getAttribute("data-width");
+
+                    entry.target.style.width = width + "%";
+
+                    observer.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.5
+        }
+    );
+
+    skillBars.forEach(bar => {
+        skillObserver.observe(bar);
+    });
+
+
+    /* =========================
+       REVEAL ON SCROLL
+    ========================== */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                    observer.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+    revealElements.forEach(element => {
+        revealObserver.observe(element);
+    });
+
+
+    /* =========================
+       SMOOTH NAVIGATION
+    ========================== */
+
+    navLinks.forEach(link => {
+
+        link.addEventListener("click", function () {
+
+            navLinks.forEach(item => {
+                item.classList.remove("active");
+            });
+
+            this.classList.add("active");
+
+        });
+
+    });
+
+</script>
+```
+
+</body>
+</html>
